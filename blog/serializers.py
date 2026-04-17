@@ -48,6 +48,11 @@ class PostSerializer(serializers.ModelSerializer):
         return post
 
     def update(self, instance, validated_data):
+        # Handle image deletion when updating
+        if 'image' in validated_data:
+            if instance.image:
+                instance.image.delete(save=False)
+        
         tags = validated_data.pop('tags', None)
         category_id = validated_data.pop('category_id', None)
         
