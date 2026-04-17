@@ -169,6 +169,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+
+    "https://mainapp.tech",
+    "https://www.mainapp.tech",
+    "https://api.mainapp.tech",
+
     "https://ellahilaw.com",
     "https://www.ellahilaw.com",
     "https://ellahi-law.vercel.app",
@@ -181,6 +186,11 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+
+    "https://mainapp.tech",
+    "https://www.mainapp.tech",
+    "https://api.mainapp.tech",
+
     "https://ellahilaw.com",
     "https://www.ellahilaw.com",
     "https://ellahi-law.vercel.app",
