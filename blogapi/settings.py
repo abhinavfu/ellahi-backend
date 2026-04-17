@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     "www.ellahilaw.com",
     "ellahi-law.vercel.app",
     "mainapp.tech",
+    "api.ellahilaw.com",
+    "api.mainapp.tech",
 ]
 
 
