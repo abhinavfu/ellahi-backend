@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    "82.29.161.182",
     "ellahilaw.com",
     "www.ellahilaw.com",
     "ellahi-law.vercel.app",
