@@ -197,11 +197,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://ellahi-law.vercel.app",
 ]
 
-CORS_ALLOW_HEADERS = [
-    "content-type",
-    "authorization",
-]
-
 # Email settings (for development - uses console backend)
 # For production, configure SMTP settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
