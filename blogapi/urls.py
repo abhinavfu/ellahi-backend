@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
     path('api/blog/', include('blog.urls')),
+    path('api/', include('contact.urls')),
 ]
 
 # Serve media files during development
