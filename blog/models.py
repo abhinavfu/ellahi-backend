@@ -24,7 +24,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, default="")
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
     excerpt = models.TextField(default="", help_text="Short description of the post")
     content = models.TextField(help_text="HTML content of the post")
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
@@ -40,3 +40,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+            # Ensure uniqueness
+            original_slug = self.slug
+            counter = 1
+            while Post.objects.filter(slug=self.slug).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+
+        super().save(*args, **kwargs)
