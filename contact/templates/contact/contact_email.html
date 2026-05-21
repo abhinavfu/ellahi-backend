@@ -1,89 +1,326 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>New Contact Request</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Contact Inquiry</title>
 </head>
-<body style="margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, sans-serif;">
 
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8; padding:20px 0;">
-    <tr>
-      <td align="center">
+<body style="
+  margin:0;
+  padding:40px 15px;
+  background:#F5F7FA;
+  font-family:Arial, Helvetica, sans-serif;
+">
 
-        <!-- Container -->
-        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td align="center">
 
-          <!-- Header -->
-          <tr>
-            <td style="background:#111827; color:#ffffff; padding:20px; text-align:center;">
-              <h2 style="margin:0; font-size:20px;">New Contact Form Submission</h2>
-            </td>
-          </tr>
+      <!-- MAIN WRAPPER -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0"
+        style="
+          max-width:680px;
+          background:#ffffff;
+          border-radius:24px;
+          overflow:hidden;
+          box-shadow:0 10px 40px rgba(15,23,42,0.08);
+        ">
 
-          <!-- Content -->
-          <tr>
-            <td style="padding:20px;">
+        <!-- HEADER -->
+        <tr>
+          <td style="padding:48px; background:#0F172A;">
 
-              <!-- Name -->
-              <p style="margin:0 0 10px;">
-                <strong>Name:</strong><br>
-                {{ name }}
-              </p>
+            <p style="
+              margin:0;
+              color:#C8A96B;
+              font-size:12px;
+              letter-spacing:2px;
+              text-transform:uppercase;
+              font-weight:600;
+            ">
+              Ellahi Law
+            </p>
 
-              <!-- Email -->
-              <p style="margin:0 0 10px;">
-                <strong>Email:</strong><br>
-                <a href="mailto:{{ email }}" style="color:#2563eb; text-decoration:none;">
-                  {{ email }}
-                </a>
-              </p>
+            <h1 style="
+              margin:14px 0 0;
+              color:#ffffff;
+              font-size:36px;
+              font-family:Georgia, serif;
+              line-height:1.2;
+            ">
+              New Contact Inquiry
+            </h1>
+
+            <p style="
+              margin:16px 0 0;
+              color:#CBD5E1;
+              font-size:15px;
+              line-height:1.7;
+            ">
+              A new consultation request has been submitted through your website.
+            </p>
+
+          </td>
+        </tr>
+
+        <!-- CONTENT -->
+        <tr>
+          <td style="padding:40px;">
+
+            <!-- CARD -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+              style="
+                border:1px solid #E2E8F0;
+                border-radius:20px;
+                overflow:hidden;
+              ">
+
+              <!-- FULL NAME -->
+              <tr>
+                <td style="padding:24px 28px; border-bottom:1px solid #EEF2F7;">
+
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+
+                      <!-- ICON BOX -->
+                      <td valign="middle">
+
+                        <table width="44" height="44" cellpadding="0" cellspacing="0"
+                          style="
+                            background:#EBF5FC;
+                            border-radius:12px;
+                          ">
+                          <tr>
+                            <td align="center" valign="middle">
+                              <img src="https://img.icons8.com/ios/50/user--v1.png"
+                                width="22" height="22" style="display:block;" />
+                            </td>
+                          </tr>
+                        </table>
+
+                      </td>
+
+                      <!-- TEXT -->
+                      <td style="padding-left:16px;" valign="middle">
+                        <p style="margin:0; font-size:12px; color:#64748B; text-transform:uppercase; letter-spacing:1px;">
+                          Full Name
+                        </p>
+                        <p style="margin:0; font-size:16px; font-weight:600; color:#0F172A;">
+                          {{ name }}
+                        </p>
+                      </td>
+
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+
+              <!-- EMAIL -->
+              <tr>
+                <td style="padding:24px 28px; border-bottom:1px solid #EEF2F7;">
+
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+
+                      <td valign="middle">
+                        <table width="44" height="44" cellpadding="0" cellspacing="0"
+                          style="background:#EBF5FC; border-radius:12px;">
+                          <tr>
+                            <td align="center" valign="middle">
+                              <img src="https://img.icons8.com/ios/50/new-post.png"
+                                width="22" height="22" style="display:block;" />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td style="padding-left:16px;" valign="middle">
+                        <p style="margin:0; font-size:12px; color:#64748B; text-transform:uppercase;">
+                          Email Address
+                        </p>
+                        <a href="mailto:{{ email }}"
+                          style="font-size:16px; color:#2563EB; text-decoration:none;">
+                          {{ email }}
+                        </a>
+                      </td>
+
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
 
               {% if phone %}
-              <p style="margin:0 0 10px;">
-                <strong>Phone:</strong><br>
-                <a href="tel:{{ phone }}" style="color:#2563eb; text-decoration:none;">
-                  {{ phone }}
-                </a>
-              </p>
+              <!-- PHONE -->
+              <tr>
+                <td style="padding:24px 28px; border-bottom:1px solid #EEF2F7;">
+
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+
+                      <td valign="middle">
+                        <table width="44" height="44" cellpadding="0" cellspacing="0"
+                          style="background:#EBF5FC; border-radius:12px;">
+                          <tr>
+                            <td align="center" valign="middle">
+                              <img src="https://img.icons8.com/ios/50/phone.png"
+                                width="22" height="22" style="display:block;" />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td style="padding-left:16px;" valign="middle">
+                        <p style="margin:0; font-size:12px; color:#64748B; text-transform:uppercase;">
+                          Phone Number
+                        </p>
+                        <a href="tel:{{ phone }}"
+                          style="font-size:16px; color:#0F172A; text-decoration:none;">
+                          {{ phone }}
+                        </a>
+                      </td>
+
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
               {% endif %}
 
               {% if service %}
-              <p style="margin:0 0 10px;">
-                <strong>Service:</strong><br>
-                {{ service }}
-              </p>
+              <!-- SERVICE -->
+              <tr>
+                <td style="padding:24px 28px; border-bottom:1px solid #EEF2F7;">
+
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+
+                      <td valign="middle">
+                        <table width="44" height="44" cellpadding="0" cellspacing="0"
+                          style="background:#EBF5FC; border-radius:12px;">
+                          <tr>
+                            <td align="center" valign="middle">
+                              <img src="https://img.icons8.com/ios/50/scales--v1.png"
+                                width="22" height="22" style="display:block;" />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td style="padding-left:16px;" valign="middle">
+                        <p style="margin:0; font-size:12px; color:#64748B; text-transform:uppercase;">
+                          Requested Service
+                        </p>
+                        <p style="margin:0; font-size:16px; color:#0F172A;">
+                          {{ service }}
+                        </p>
+                      </td>
+
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
               {% endif %}
 
               {% if time %}
-              <p style="margin:0 0 10px;">
-                <strong>Preferred Time:</strong><br>
-                {{ time }}
-              </p>
+              <!-- TIME -->
+              <tr>
+                <td style="padding:24px 28px;">
+
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+
+                      <td valign="middle">
+                        <table width="44" height="44" cellpadding="0" cellspacing="0"
+                          style="background:#EBF5FC; border-radius:12px;">
+                          <tr>
+                            <td align="center" valign="middle">
+                              <img src="https://img.icons8.com/ios/50/clock--v1.png"
+                                width="22" height="22" style="display:block;" />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td style="padding-left:16px;" valign="middle">
+                        <p style="margin:0; font-size:12px; color:#64748B; text-transform:uppercase;">
+                          Preferred Time
+                        </p>
+                        <p style="margin:0; font-size:16px; color:#0F172A;">
+                          {{ time }}
+                        </p>
+                      </td>
+
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
               {% endif %}
 
-              <!-- Message Box -->
-              <div style="margin-top:20px; padding:15px; background:#f9fafb; border-radius:6px; border:1px solid #e5e7eb;">
-                <strong>Message:</strong>
-                <p style="margin:10px 0 0; line-height:1.5;">
+            </table>
+
+            <!-- MESSAGE -->
+            <div style="margin-top:32px;">
+
+              <p style="
+                margin:0 0 10px;
+                font-size:12px;
+                text-transform:uppercase;
+                letter-spacing:1px;
+                color:#64748B;
+                font-weight:600;
+              ">
+                Message
+              </p>
+
+              <div style="
+                padding:24px;
+                border-radius:18px;
+                background:#F8FAFC;
+                border:1px solid #E2E8F0;
+              ">
+                <p style="
+                  margin:0;
+                  font-size:15px;
+                  line-height:1.8;
+                  color:#334155;
+                ">
                   {{ message }}
                 </p>
               </div>
 
-            </td>
-          </tr>
+            </div>
 
-          <!-- Footer -->
-          <tr>
-            <td style="padding:15px; text-align:center; font-size:12px; color:#9ca3af;">
-              This email was sent from www.ellahilaw.com contact form.
-            </td>
-          </tr>
+          </td>
+        </tr>
 
-        </table>
+        <!-- FOOTER -->
+        <tr>
+          <td style="
+            padding:28px;
+            text-align:center;
+            background:#F8FAFC;
+            border-top:1px solid #E2E8F0;
+          ">
+            <p style="margin:0; font-size:13px; color:#64748B;">
+              Sent from
+              <a href="https://www.ellahilaw.com"
+                style="color:#0F172A; text-decoration:none; font-weight:600;">
+                www.ellahilaw.com
+              </a>
+            </p>
+          </td>
+        </tr>
 
-      </td>
-    </tr>
-  </table>
+      </table>
+
+    </td>
+  </tr>
+</table>
 
 </body>
 </html>
