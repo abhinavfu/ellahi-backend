@@ -211,14 +211,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # # EMAIL_HOST_PASSWORD = 'your-password'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'info@ellahilaw.com'
-EMAIL_HOST_PASSWORD = 'your-email-password'
+EMAIL_HOST_USER = 'fellahi@ellahilaw.com'
+EMAIL_HOST_PASSWORD = 'mwda jgql bpys nsaa'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-EMAIL_HOST_TO = "fellahi@ellahilaw.com"
+EMAIL_HOST_TO = "info@ellahilaw.com"
 
 # Media files settings
 MEDIA_URL = '/media/'
